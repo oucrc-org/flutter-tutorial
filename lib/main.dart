@@ -48,8 +48,14 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   var _index;
-  var pokemons = ['ピカチュウ', 'ぽっちゃま', 'シェイミー', 'ギラティナ', 'コイル'];
-  var pokemon = "";
+  var pokemons = [
+    _pokemon('ピカチュウ', 'pikachu.png'),
+    _pokemon('ぽっちゃま', 'pochama.png'),
+    _pokemon('シェイミー', 'syeimy.png'),
+    _pokemon('ギラティナ', 'giratelina.png'),
+    _pokemon('コイル', 'coil.png')
+  ];
+  _pokemon pokemon = _pokemon('', '');
   var rand = new math.Random();
 
   void _incrementCounter() {
@@ -80,11 +86,12 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
-            Image.asset('images/pikachu.png'),
+            Image.asset('images/' + pokemon.src),
             Text(
-              pokemon,
-              style: TextStyle(fontSize: 20),
+              pokemon.name,
+              style: TextStyle(fontSize: 26),
             ),
           ],
         )
@@ -96,4 +103,11 @@ class _MyHomePageState extends State<MyHomePage> {
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
+}
+
+class _pokemon{
+  String name;
+  String src;
+
+  _pokemon(this.name, this.src);
 }

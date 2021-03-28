@@ -46,6 +46,11 @@ flutter:
 
   assets:
     - images/pikachu.png
+    - images/pochama.png
+    - images/syeimy.png
+    - images/giratelina.png
+    - images/coil.png
+
 
   # To add assets to your application, add an assets section, like this:
   # assets:
